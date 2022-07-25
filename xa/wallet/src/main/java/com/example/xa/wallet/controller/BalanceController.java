@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/balance")
-@Transactional
 public class BalanceController {
     @Autowired
     private BalanceRepository balanceRepository;
@@ -25,6 +24,7 @@ public class BalanceController {
         return balanceRepository.findAll();
     }
 
+    @Transactional
     @PostMapping("/pay")
     public void pay(@RequestParam("username") String username, @RequestParam("amount") BigDecimal amount) {
         balanceRepository.findByUsername(username)

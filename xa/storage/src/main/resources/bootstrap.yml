@@ -1,13 +1,19 @@
+server:
+  port: 55012
 spring:
   application:
     name: storage
   cloud:
     nacos:
-      config:
-        server-addr: localhost:8848
-        file-extension: yaml
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/xa_storage
+    username: root
+    password: 123456
+# seata client
 seata:
-  data-source-proxy-mode: XA
   tx-service-group: my-tx-group
   service:
     vgroup-mapping:
@@ -17,4 +23,5 @@ seata:
     type: nacos
     nacos:
       application: seata-server
-      server-addr: localhost:8848
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP

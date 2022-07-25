@@ -9,20 +9,20 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-@Transactional
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
     @Autowired
     private OrderRepository orderRepository;
 
+    @Transactional
     @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
     public void submit(@RequestBody Ordering ordering) {
         Order order = new Order();
         order.setProductId(ordering.getProductId());
         order.setBill(ordering.getBill());
         orderRepository.save(order);
-        if (ThreadLocalRandom.current().nextInt()%2==0) {
+        if (ThreadLocalRandom.current().nextInt() % 2 == 0) {
             throw new RuntimeException("老子不接单了");
         }
     }

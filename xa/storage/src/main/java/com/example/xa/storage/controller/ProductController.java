@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/products")
-@Transactional
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;
@@ -23,6 +22,7 @@ public class ProductController {
         return productRepository.findAll();
     }
 
+    @Transactional
     @PostMapping("/reduce")
     public void reduce(@RequestParam("id") Long id, @RequestParam("amount") Integer amount) {
         productRepository.findById(id).map(p -> {

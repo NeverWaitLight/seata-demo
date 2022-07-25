@@ -16,3 +16,7 @@ docker run --name nacos -e MODE=standalone -p 8848:8848 -p 9848:9848 -p 9849:984
 docker pull seataio/seata-server:1.5.1
 docker run --name seata -p 8091:8091 -p 7091:7091 -e SEATA_IP=192.168.0.203 --network test -d seataio/seata-server:1.5.1 
 ```
+
+seata-server 数据库脚本
+
+https://github.com/seata/seata/blob/develop/script/server/db/mysql.sql
