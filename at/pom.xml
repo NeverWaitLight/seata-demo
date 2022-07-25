@@ -9,14 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>xa</artifactId>
+    <artifactId>at</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>xa-storage</module>
-        <module>xa-wallet</module>
-        <module>xa-order</module>
-        <module>xa-business</module>
+        <module>at-storage</module>
+        <module>at-wallet</module>
+        <module>at-order</module>
+        <module>at-business</module>
     </modules>
 
     <properties>
@@ -25,6 +25,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>commons</artifactId>

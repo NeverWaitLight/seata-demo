@@ -1,4 +1,4 @@
-# XA demo
+# AT demo
 
 ## Docker network
 
@@ -77,7 +77,7 @@ seata:
 发送请求：
 
 ```bash
-curl --location --request POST 'localhost:55010/ordering' \
+curl --location --request POST 'localhost:65010/ordering' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "username": "tom",
@@ -87,9 +87,9 @@ curl --location --request POST 'localhost:55010/ordering' \
 }'
 ```
 
-order 业务会随机失败以检查 XA 事务是否发挥作用
+order 业务会随机失败以检查 AT 事务是否发挥作用
 
 ## 如何使用
 
-- 在 Application 类上添加 `@EnableAutoDataSourceProxy(dataSourceProxyMode = "XA")` 注解开启 XA 事务
+- 在 Application 类上添加 `@EnableAutoDataSourceProxy(dataSourceProxyMode = "AT")` 注解开启 AT 事务
 - TM 使用 `@GlobalTransactional` 开启全局事务，RM 使用 `@Transactional` 加入全局事务

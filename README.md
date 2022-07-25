@@ -8,3 +8,11 @@
 - Spring-Cloud-Alibaba: 2.2.8.RELEASE
 - Nacos-Server: v2.1.0
 - Seata-Server: 1.5.1
+
+# Docker network
+
+方便组件之间相互访问
+
+```bash
+docker network create test
+```
