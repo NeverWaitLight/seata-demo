@@ -14,10 +14,10 @@ spring:
     password: 123456
 # seata client
 seata:
-  tx-service-group: my-tx-group
+  tx-service-group: my-at-tx-group
   service:
     vgroup-mapping:
-      my-tx-group:
+      my-at-tx-group:
         default
   registry:
     type: nacos

@@ -22,9 +22,6 @@ public class OrderController {
         order.setProductId(ordering.getProductId());
         order.setBill(ordering.getBill());
         orderRepository.save(order);
-        if (ThreadLocalRandom.current().nextInt() % 2 == 0) {
-            throw new RuntimeException("老子不接单了");
-        }
     }
 
     @GetMapping

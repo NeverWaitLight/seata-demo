@@ -22,7 +22,7 @@ docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 --network tes
 ### 初始化数据
 
 - [seata-server 初始化脚本](https://github.com/seata/seata/blob/develop/script/server/db/mysql.sql)
-- [demo 初始化脚本](script/init.sql)
+- [demo 初始化脚本](script/xa-tcc-init.sql)
 
 ## 部署 nacos-server
 
@@ -87,7 +87,7 @@ curl --location --request POST 'localhost:65010/ordering' \
 }'
 ```
 
-order 业务会随机失败以检查 AT 事务是否发挥作用
+业务会随机失败以检查 AT 事务是否发挥作用
 
 ## 如何使用
 
